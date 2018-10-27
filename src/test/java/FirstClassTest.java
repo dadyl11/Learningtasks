@@ -1,8 +1,8 @@
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
+import UdemyTasks.FirstClass;
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 
 class FirstClassTest {
 
