@@ -2,13 +2,13 @@ package Recruitment.AgesCalculator;
 
 public class TurtleAge implements CalculateAge {
 
+  private ValidateParameters validateParameters = new ValidateParameters();
+
   @Override
-  public int caclulateAnimalAge(int humanYears) {
-    if (humanYears <= 0) {
-      throw new IllegalArgumentException(humanYears + " cannot be less or equal to zero");
-    }
+  public int calculateAnimalAge(int humanYears) {
+    validateParameters.validateYearsNumber(humanYears);
     if (humanYears > 2) {
-      return 23 + (humanYears - 2);
+      return 17 + (humanYears - 2);
     } else if (humanYears == 2) {
       return 17;
     } else {
@@ -18,6 +18,13 @@ public class TurtleAge implements CalculateAge {
 
   @Override
   public double calculateFromAnimalToHuman(int animalYears) {
-    return 0;
+    validateParameters.validateYearsNumber(animalYears);
+    if (animalYears <= 15) {
+      return 1;
+    } else if (animalYears <= 17) {
+      return 2;
+    } else {
+      return 2 + ((double) animalYears - 17);
+    }
   }
 }
