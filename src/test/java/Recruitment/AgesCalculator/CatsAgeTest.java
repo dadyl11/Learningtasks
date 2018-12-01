@@ -19,24 +19,48 @@ public class CatsAgeTest {
   private CatsAge catsAge = new CatsAge();
 
   @Test
-  @Parameters(method = "params")
-  public void shouldReturnAnimalYears(int humanYears, int animalYears) {
+  @Parameters(method = "humanToAnimalYears")
+  public void shouldConvertHumanYearsToAnimal(int humanYears, int animalYears) {
     //given
 
     //when
-    int actualAnimalYears = catsAge.calculateAnimalAge(humanYears);
+    int actualAnimalYears = catsAge.convertHumanYearsToAnimalYears(humanYears);
 
     //then
     assertThat(actualAnimalYears, is(animalYears));
   }
 
-  private Object[] params() {
+  private Object[] humanToAnimalYears() {
     return new Object[]{
         new Object[]{1, 15},
         new Object[]{2, 23},
         new Object[]{3, 27},
         new Object[]{4, 31},
         new Object[]{155, 635}
+    };
+  }
+
+  @Test
+  @Parameters(method = "animalToHumanYears")
+  public void shouldReturnConvertAnimalYearsToHuman(int animalYears, double humanYears) {
+    //given
+
+    //when
+    double actualHumanYears = catsAge.convertAnimalYearsToHumanYears(animalYears);
+
+    //then
+    assertThat(actualHumanYears, is(humanYears));
+  }
+
+  private Object[] animalToHumanYears() {
+    return new Object[]{
+        new Object[]{15, 1},
+        new Object[]{23, 2},
+        new Object[]{17, 1.5},
+        new Object[]{23, 2},
+        new Object[]{27, 3},
+        new Object[]{49, 8.5},
+        new Object[]{55, 10}
     };
   }
 
@@ -48,7 +72,7 @@ public class CatsAgeTest {
     expectedEx.expectMessage("years number cannot be less or equal to zero");
 
     //when
-    catsAge.calculateAnimalAge(humanYears);
+    catsAge.convertHumanYearsToAnimalYears(humanYears);
   }
 
   @Test

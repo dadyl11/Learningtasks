@@ -1,8 +1,8 @@
-package Recruitment.AgesCalculator;
+package Recruitment.AgesCalculator.Helpers;
 
 public class ValidateParameters {
 
-  protected void validateYearsNumber(int years) {
+  public void validateYearsNumber(double years) {
     if (years <= 0) {
       throw new IllegalArgumentException("years number cannot be less or equal to zero");
     }

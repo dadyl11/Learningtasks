@@ -1,17 +1,17 @@
 package Recruitment.AgesCalculator;
 
+import Recruitment.AgesCalculator.Helpers.CalculateExactYearsNumber;
+import Recruitment.AgesCalculator.Helpers.RoundNumbers;
+import Recruitment.AgesCalculator.Helpers.ValidateParameters;
+
 public class CatsAge implements CalculateAge {
 
-  public static void main(String[] args) {
-    CatsAge trttr = new CatsAge();
-
-    System.out.println(trttr.calculateFromAnimalToHuman(52));
-  }
-
   private ValidateParameters validateParameters = new ValidateParameters();
+  private RoundNumbers round = new RoundNumbers();
+  private CalculateExactYearsNumber calculateExactYearsNumber = new CalculateExactYearsNumber();
 
   @Override
-  public int calculateAnimalAge(int humanYears) {
+  public int convertHumanYearsToAnimalYears(int humanYears) {
     validateParameters.validateYearsNumber(humanYears);
     if (humanYears > 2) {
       return 23 + (humanYears - 2) * 4;
@@ -23,20 +23,14 @@ public class CatsAge implements CalculateAge {
   }
 
   @Override
-  public double calculateFromAnimalToHuman(int animalYears) {
+  public double convertAnimalYearsToHumanYears(int animalYears) {
     validateParameters.validateYearsNumber(animalYears);
     if (animalYears <= 15) {
-      return 1;
+      return round.roundToHalf(animalYears / 15);
     } else if (animalYears <= 23) {
-      return 2;
+      return 1 + round.roundToHalf(calculateExactYearsNumber.calculateExactNumberOfYearsLeft(animalYears, 15, 8));
     } else {
-      return 2 + ((double) animalYears - 25) / 55;
-    }
-  }
-
-  private void validateYears(int animalYears) {
-    if (animalYears <= 0) {
-      throw new IllegalArgumentException("Years number cannot be less or equal to zero");
+      return 2 + round.roundToHalf(calculateExactYearsNumber.calculateExactNumberOfYearsLeft(animalYears, 23, 4));
     }
   }
 }
