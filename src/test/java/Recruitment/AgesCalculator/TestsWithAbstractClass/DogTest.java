@@ -28,6 +28,7 @@ public class DogTest extends CalculateAgesTest {
         new Object[]{15, 1},
         new Object[]{18, 1.5},
         new Object[]{24, 2},
+        new Object[]{27, 2.5},
         new Object[]{29, 3},
         new Object[]{31, 3.5},
         new Object[]{49, 7},

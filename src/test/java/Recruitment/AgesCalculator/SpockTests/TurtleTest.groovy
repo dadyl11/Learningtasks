@@ -28,6 +28,7 @@ class TurtleTest extends Specification {
         result == humanYears
         where:
         turtleYears || humanYears
+        1           || 0.5
         8           || 0.5
         15          || 1
         16          || 1.5

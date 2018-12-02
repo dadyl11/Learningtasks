@@ -1,0 +1,11 @@
+Assumptions:
+
+1. Years provided as inputs to the methods should be only integers numbers.
+2. For the method that calculate from the animal years to the human years the result is calculated to the nearest half.
+Only for the age scope from 0 to 0.5 year it is always rounded up to 0.5.
+It means that we do not use months as the result years but only the whole year or half parts.
+3. The classes in the Helpers package are used by all "Animal's" method and can be modified easily.
+4. Tests are written in three versions: Junit as three separate tests, Junit using abstract class as the main test class
+and the last ones are written using Spock framework.
+5. Java code was build based on Java 8 compiler.
+6. Code was created in maven and is built successfully.

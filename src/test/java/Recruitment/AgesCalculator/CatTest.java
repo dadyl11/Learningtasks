@@ -58,6 +58,7 @@ public class CatTest {
         new Object[]{15, 1},
         new Object[]{17, 1.5},
         new Object[]{23, 2},
+        new Object[]{25, 2.5},
         new Object[]{27, 3},
         new Object[]{49, 8.5},
         new Object[]{55, 10}

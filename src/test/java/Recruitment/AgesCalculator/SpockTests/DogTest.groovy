@@ -28,6 +28,7 @@ class DogTest extends Specification {
         result == humanYears
         where:
         dogYears || humanYears
+        2        || 0.5
         8        || 0.5
         15       || 1
         18       || 1.5
