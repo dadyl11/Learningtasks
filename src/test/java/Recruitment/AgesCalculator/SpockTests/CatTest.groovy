@@ -39,7 +39,7 @@ class CatTest extends Specification {
         55          || 10
     }
 
-    def "Should get an illegal argument exception when put years number as zero or negative value"() {
+    def "Should get an illegal argument exception when put animal years number as zero or negative value"() {
         given:
         def humanYears = 0
 
@@ -47,7 +47,18 @@ class CatTest extends Specification {
         catsAge.convertAnimalYearsToHumanYears(humanYears)
 
         then:
-       // thrown(IllegalArgumentException)
+        IllegalArgumentException e = thrown()
+        e.message == "years number cannot be less or equal to zero"
+    }
+
+    def "Should get an illegal argument exception when put human years number as zero or negative value"() {
+        given:
+        def humanYears = -2
+
+        when:
+        catsAge.convertHumanYearsToAnimalYears(humanYears)
+
+        then:
         IllegalArgumentException e = thrown()
         e.message == "years number cannot be less or equal to zero"
     }

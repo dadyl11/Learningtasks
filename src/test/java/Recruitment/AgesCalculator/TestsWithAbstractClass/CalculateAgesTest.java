@@ -50,7 +50,7 @@ public abstract class CalculateAgesTest {
   }
 
   @Test
-  public void shouldReturnException() {
+  public void shouldReturnExceptionCausedByWrongHumanYearsNumber() {
     //given
     int humanYears = 0;
     expectedEx.expect(IllegalArgumentException.class);
@@ -58,5 +58,16 @@ public abstract class CalculateAgesTest {
 
     //when
     calculateAge.convertHumanYearsToAnimalYears(humanYears);
+  }
+
+  @Test
+  public void shouldReturnExceptionCausedByWrongAnimalYearsNumber() {
+    //given
+    int humanYears = -1;
+    expectedEx.expect(IllegalArgumentException.class);
+    expectedEx.expectMessage("years number cannot be less or equal to zero");
+
+    //when
+    calculateAge.convertAnimalYearsToHumanYears(humanYears);
   }
 }

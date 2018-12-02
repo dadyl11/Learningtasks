@@ -28,18 +28,18 @@ class DogTest extends Specification {
         result == humanYears
         where:
         dogYears || humanYears
-        8           || 0.5
-        15          || 1
-        18          || 1.5
-        24          || 2
-        27          || 2.5
-        29          || 3
-        31          || 3.5
-        49          || 7
-        55          || 8
+        8        || 0.5
+        15       || 1
+        18       || 1.5
+        24       || 2
+        27       || 2.5
+        29       || 3
+        31       || 3.5
+        49       || 7
+        55       || 8
     }
 
-    def "Should get an illegal argument exception when put years number as zero or negative value"() {
+    def "Should get an illegal argument exception when put animal years number as zero or negative value"() {
         given:
         def humanYears = 0
 
@@ -47,7 +47,18 @@ class DogTest extends Specification {
         dog.convertAnimalYearsToHumanYears(humanYears)
 
         then:
-        // thrown(IllegalArgumentException)
+        IllegalArgumentException e = thrown()
+        e.message == "years number cannot be less or equal to zero"
+    }
+
+    def "Should get an illegal argument exception when put human years number as zero or negative value"() {
+        given:
+        def humanYears = -2
+
+        when:
+        dog.convertHumanYearsToAnimalYears(humanYears)
+
+        then:
         IllegalArgumentException e = thrown()
         e.message == "years number cannot be less or equal to zero"
     }

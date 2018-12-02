@@ -37,12 +37,25 @@ class TurtleTest extends Specification {
         55          || 40
     }
 
-    def "Should get an illegal argument exception when put years number as zero or negative value"() {
+    def "Should get an illegal argument exception when put animal years number as zero or negative value"() {
         given:
         def humanYears = 0
 
         when:
         turtle.convertAnimalYearsToHumanYears(humanYears)
+
+        then:
+        // thrown(IllegalArgumentException)
+        IllegalArgumentException e = thrown()
+        e.message == "years number cannot be less or equal to zero"
+    }
+
+    def "Should get an illegal argument exception when put human years number as zero or negative value"() {
+        given:
+        def humanYears = -2
+
+        when:
+        turtle.convertHumanYearsToAnimalYears(humanYears)
 
         then:
         // thrown(IllegalArgumentException)
