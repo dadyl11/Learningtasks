@@ -4,13 +4,7 @@ import Recruitment.AgesCalculator.Helpers.CalculateExactYearsNumber;
 import Recruitment.AgesCalculator.Helpers.RoundNumbers;
 import Recruitment.AgesCalculator.Helpers.ValidateParameters;
 
-public class DogAge implements CalculateAge {
-
-  public static void main(String[] args) {
-    DogAge trttr = new DogAge();
-
-    System.out.println(trttr.convertAnimalYearsToHumanYears(27));
-  }
+public class Cat implements CalculateAge {
 
   private ValidateParameters validateParameters = new ValidateParameters();
   private RoundNumbers round = new RoundNumbers();
@@ -20,9 +14,9 @@ public class DogAge implements CalculateAge {
   public int convertHumanYearsToAnimalYears(int humanYears) {
     validateParameters.validateYearsNumber(humanYears);
     if (humanYears > 2) {
-      return 24 + (humanYears - 2) * 5;
+      return 23 + (humanYears - 2) * 4;
     } else if (humanYears == 2) {
-      return 24;
+      return 23;
     } else {
       return 15;
     }
@@ -32,12 +26,11 @@ public class DogAge implements CalculateAge {
   public double convertAnimalYearsToHumanYears(int animalYears) {
     validateParameters.validateYearsNumber(animalYears);
     if (animalYears <= 15) {
-      return round.roundToHalf(animalYears / 15);
-    } else if (animalYears <= 24) {
-      return 1 + round.roundToHalf(calculateExactYearsNumber.calculateExactNumberOfYearsLeft(animalYears, 15, 9));
+      return round.roundToHalf(calculateExactYearsNumber.calculateExactNumberOfYearsLeft(animalYears, 0, 15));
+    } else if (animalYears <= 23) {
+      return 1 + round.roundToHalf(calculateExactYearsNumber.calculateExactNumberOfYearsLeft(animalYears, 15, 8));
     } else {
-      return 2 + round.roundToHalf(calculateExactYearsNumber.calculateExactNumberOfYearsLeft(animalYears, 24, 5));
-
+      return 2 + round.roundToHalf(calculateExactYearsNumber.calculateExactNumberOfYearsLeft(animalYears, 23, 4));
     }
   }
 }

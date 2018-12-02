@@ -1,4 +1,4 @@
-package Recruitment;
+package HackerRank;
 
 import java.util.HashMap;
 import java.util.Map;
