@@ -1,15 +1,15 @@
 package Recruitment.AgesCalculator.TestsWithAbstractClass;
 
-import Recruitment.AgesCalculator.DogAge;
+import Recruitment.AgesCalculator.Dog;
 import junitparams.JUnitParamsRunner;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitParamsRunner.class)
-public class DogAgeTest extends CalculateAgesTest {
+public class DogTest extends CalculateAgesTest {
 
   @Override
   public void setAnimal() {
-    this.calculateAge = new DogAge();
+    this.calculateAge = new Dog();
   }
 
   private Object[] humanToAnimalYears() {
@@ -24,10 +24,11 @@ public class DogAgeTest extends CalculateAgesTest {
 
   private Object[] animalToHumanYears() {
     return new Object[]{
+        new Object[]{8, 0.5},
         new Object[]{15, 1},
-        new Object[]{24, 2},
         new Object[]{18, 1.5},
-        new Object[]{23, 2},
+        new Object[]{24, 2},
+        new Object[]{29, 3},
         new Object[]{31, 3.5},
         new Object[]{49, 7},
         new Object[]{55, 8}

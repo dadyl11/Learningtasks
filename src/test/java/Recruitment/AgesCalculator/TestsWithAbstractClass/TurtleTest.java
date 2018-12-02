@@ -1,15 +1,15 @@
 package Recruitment.AgesCalculator.TestsWithAbstractClass;
 
-import Recruitment.AgesCalculator.TurtleAge;
+import Recruitment.AgesCalculator.Turtle;
 import junitparams.JUnitParamsRunner;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitParamsRunner.class)
-public class TurtleAgeTest extends CalculateAgesTest {
+public class TurtleTest extends CalculateAgesTest {
 
   @Override
   public void setAnimal() {
-    this.calculateAge = new TurtleAge();
+    this.calculateAge = new Turtle();
   }
 
   private Object[] humanToAnimalYears() {
@@ -24,9 +24,10 @@ public class TurtleAgeTest extends CalculateAgesTest {
 
   private Object[] animalToHumanYears() {
     return new Object[]{
+        new Object[]{8, 0.5},
         new Object[]{15, 1},
-        new Object[]{17, 2},
         new Object[]{16, 1.5},
+        new Object[]{17, 2},
         new Object[]{18, 3},
         new Object[]{20, 5},
         new Object[]{55, 40}
