@@ -2,6 +2,7 @@ package Recruitment.AgesCalculator;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.*;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
@@ -11,12 +12,12 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitParamsRunner.class)
-public class CatsAgeTest {
+public class TurtleAgeTest {
 
   @Rule
   public ExpectedException expectedEx = ExpectedException.none();
 
-  private CatsAge catsAge = new CatsAge();
+  private TurtleAge turtleAge = new TurtleAge();
 
   @Test
   @Parameters(method = "humanToAnimalYears")
@@ -24,7 +25,7 @@ public class CatsAgeTest {
     //given
 
     //when
-    int actualAnimalYears = catsAge.convertHumanYearsToAnimalYears(humanYears);
+    int actualAnimalYears = turtleAge.convertHumanYearsToAnimalYears(humanYears);
 
     //then
     assertThat(actualAnimalYears, is(animalYears));
@@ -33,10 +34,10 @@ public class CatsAgeTest {
   private Object[] humanToAnimalYears() {
     return new Object[]{
         new Object[]{1, 15},
-        new Object[]{2, 23},
-        new Object[]{3, 27},
-        new Object[]{4, 31},
-        new Object[]{155, 635}
+        new Object[]{2, 17},
+        new Object[]{3, 18},
+        new Object[]{4, 19},
+        new Object[]{155, 170}
     };
   }
 
@@ -46,7 +47,7 @@ public class CatsAgeTest {
     //given
 
     //when
-    double actualHumanYears = catsAge.convertAnimalYearsToHumanYears(animalYears);
+    double actualHumanYears = turtleAge.convertAnimalYearsToHumanYears(animalYears);
 
     //then
     assertThat(actualHumanYears, is(humanYears));
@@ -55,12 +56,11 @@ public class CatsAgeTest {
   private Object[] animalToHumanYears() {
     return new Object[]{
         new Object[]{15, 1},
-        new Object[]{23, 2},
-        new Object[]{17, 1.5},
-        new Object[]{23, 2},
-        new Object[]{27, 3},
-        new Object[]{49, 8.5},
-        new Object[]{55, 10}
+        new Object[]{17, 2},
+        new Object[]{16, 1.5},
+        new Object[]{18, 3},
+        new Object[]{20, 5},
+        new Object[]{55, 40}
     };
   }
 
@@ -72,6 +72,6 @@ public class CatsAgeTest {
     expectedEx.expectMessage("years number cannot be less or equal to zero");
 
     //when
-    catsAge.convertHumanYearsToAnimalYears(humanYears);
+    turtleAge.convertHumanYearsToAnimalYears(humanYears);
   }
 }

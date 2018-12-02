@@ -6,12 +6,6 @@ import Recruitment.AgesCalculator.Helpers.ValidateParameters;
 
 public class DogAge implements CalculateAge {
 
-  public static void main(String[] args) {
-    DogAge trttr = new DogAge();
-
-    System.out.println(trttr.convertAnimalYearsToHumanYears(27));
-  }
-
   private ValidateParameters validateParameters = new ValidateParameters();
   private RoundNumbers round = new RoundNumbers();
   private CalculateExactYearsNumber calculateExactYearsNumber = new CalculateExactYearsNumber();
