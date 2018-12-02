@@ -3,11 +3,9 @@ package Recruitment.AgesCalculator.SpockTests
 import Recruitment.AgesCalculator.Cat
 import spock.lang.Specification
 
-
 class CatTest extends Specification {
 
     private Cat catsAge = new Cat();
-
 
     def "Should convert human years to animal years"() {
         when: "The 'convertHumanYearsToAnimalYears' is ran"
@@ -30,10 +28,12 @@ class CatTest extends Specification {
         result == humanYears
         where:
         animalYears || humanYears
+        1           || 0.5
         8           || 0.5
         15          || 1
-        23          || 2
         17          || 1.5
+        23          || 2
+        25          || 2.5
         27          || 3
         49          || 8.5
         55          || 10
