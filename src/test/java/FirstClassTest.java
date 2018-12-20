@@ -13,7 +13,6 @@ class FirstClassTest {
 
     //when
     String actual = new FirstClass().test(input);
-
     //then
     Assert.assertThat(input, is(actual));
     assertEquals(input, actual);

@@ -7,7 +7,6 @@ public class BarkingDog {
     System.out.println(bark(false, 2));
     System.out.println(bark(true, 8));
     System.out.println(bark(true, -1));
-
   }
 
   public static boolean bark(boolean barking, int hourOfDay) {

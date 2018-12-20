@@ -16,6 +16,7 @@ public class DecimalComparatorTest {
   public void areEqualByThreeDecimalPlaces(double firstNumber, double secondNumber, boolean valid) {
     //when
     boolean decimalComparatorTest = new DecimalComparator().areEqualByThreeDecimalPlaces(firstNumber, secondNumber);
+
     //then
     assertThat(decimalComparatorTest, is(valid));
   }
