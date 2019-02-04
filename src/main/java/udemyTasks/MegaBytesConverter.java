@@ -1,4 +1,4 @@
-package UdemyTasks;
+package udemyTasks;
 
 public class MegaBytesConverter {
 

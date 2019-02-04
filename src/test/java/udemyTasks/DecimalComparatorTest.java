@@ -1,4 +1,4 @@
-package UdemyTasks;
+package udemyTasks;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

@@ -1,8 +1,8 @@
 package Recruitment.AgesCalculator;
 
-import Recruitment.AgesCalculator.Helpers.CalculateExactYearsNumber;
-import Recruitment.AgesCalculator.Helpers.RoundNumbers;
-import Recruitment.AgesCalculator.Helpers.ValidateParameters;
+import Recruitment.AgesCalculator.helpers.CalculateExactYearsNumber;
+import Recruitment.AgesCalculator.helpers.RoundNumbers;
+import Recruitment.AgesCalculator.helpers.ValidateParameters;
 
 public class Dog implements CalculateAge {
 
