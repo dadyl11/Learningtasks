@@ -7,6 +7,7 @@ public class LastDigitChecker {
   }
 
   public static boolean hasSameLastDigit(int firstNum, int secondNum, int thirdNum) {
+    char[] digits = new char[7];
     if (!isValid(firstNum) || !isValid(secondNum) || !isValid(thirdNum)) {
       return false;
     }
