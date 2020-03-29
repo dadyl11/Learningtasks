@@ -1,4 +1,4 @@
-package Recruitment.AgesCalculator.helpers;
+package recruitment.agesCalculator.helpers;
 import static com.sun.xml.internal.fastinfoset.tools.PrintTable.printArray;
 
 import java.util.*;

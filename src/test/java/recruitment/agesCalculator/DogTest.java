@@ -1,4 +1,4 @@
-package Recruitment.AgesCalculator;
+package recruitment.agesCalculator;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11,12 +11,12 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitParamsRunner.class)
-public class CatTest {
+public class DogTest {
 
   @Rule
   public ExpectedException expectedEx = ExpectedException.none();
 
-  private Cat cat = new Cat();
+  private Dog dog = new Dog();
 
   @Test
   @Parameters(method = "humanToAnimalYears")
@@ -24,7 +24,7 @@ public class CatTest {
     //given
 
     //when
-    int actualAnimalYears = cat.convertHumanYearsToAnimalYears(humanYears);
+    int actualAnimalYears = dog.convertHumanYearsToAnimalYears(humanYears);
 
     //then
     assertThat(actualAnimalYears, is(animalYears));
@@ -33,10 +33,10 @@ public class CatTest {
   private Object[] humanToAnimalYears() {
     return new Object[]{
         new Object[]{1, 15},
-        new Object[]{2, 23},
-        new Object[]{3, 27},
-        new Object[]{4, 31},
-        new Object[]{155, 635}
+        new Object[]{2, 24},
+        new Object[]{3, 29},
+        new Object[]{4, 34},
+        new Object[]{155, 789}
     };
   }
 
@@ -46,7 +46,7 @@ public class CatTest {
     //given
 
     //when
-    double actualHumanYears = cat.convertAnimalYearsToHumanYears(animalYears);
+    double actualHumanYears = dog.convertAnimalYearsToHumanYears(animalYears);
 
     //then
     assertThat(actualHumanYears, is(humanYears));
@@ -56,12 +56,12 @@ public class CatTest {
     return new Object[]{
         new Object[]{8, 0.5},
         new Object[]{15, 1},
-        new Object[]{17, 1.5},
-        new Object[]{23, 2},
-        new Object[]{25, 2.5},
-        new Object[]{27, 3},
-        new Object[]{49, 8.5},
-        new Object[]{55, 10}
+        new Object[]{18, 1.5},
+        new Object[]{24, 2},
+        new Object[]{27, 2.5},
+        new Object[]{31, 3.5},
+        new Object[]{49, 7},
+        new Object[]{55, 8}
     };
   }
 
@@ -73,6 +73,6 @@ public class CatTest {
     expectedEx.expectMessage("years number cannot be less or equal to zero");
 
     //when
-    cat.convertHumanYearsToAnimalYears(humanYears);
+    dog.convertHumanYearsToAnimalYears(humanYears);
   }
 }

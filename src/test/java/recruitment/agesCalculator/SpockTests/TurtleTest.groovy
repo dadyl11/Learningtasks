@@ -1,6 +1,6 @@
-package Recruitment.AgesCalculator.SpockTests
+package recruitment.agesCalculator.SpockTests
 
-import Recruitment.AgesCalculator.Turtle
+import recruitment.agesCalculator.Turtle
 import spock.lang.Specification
 
 class TurtleTest extends Specification {

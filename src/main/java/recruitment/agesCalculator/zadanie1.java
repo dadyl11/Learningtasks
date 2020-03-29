@@ -1,4 +1,4 @@
-package Recruitment.AgesCalculator;
+package recruitment.agesCalculator;
 
 import static java.lang.Math.sqrt;
 

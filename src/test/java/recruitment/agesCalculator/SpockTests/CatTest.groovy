@@ -1,43 +1,42 @@
-package Recruitment.AgesCalculator.SpockTests
+package recruitment.agesCalculator.SpockTests
 
-import Recruitment.AgesCalculator.Dog
+import recruitment.agesCalculator.Cat
 import spock.lang.Specification
 
-class DogTest extends Specification {
+class CatTest extends Specification {
 
-    private Dog dog = new Dog();
+    private Cat catsAge = new Cat();
 
-    def "Should convert human years to dog years"() {
+    def "Should convert human years to animal years"() {
         when: "The 'convertHumanYearsToAnimalYears' is ran"
-        def result = dog.convertHumanYearsToAnimalYears(humanYears)
+        def result = catsAge.convertHumanYearsToAnimalYears(humanYears)
         then: "result should be as #animalYears"
         result == animalYears
         where:
         humanYears || animalYears
         1          || 15
-        2          || 24
-        3          || 29
-        4          || 34
-        155        || 789
+        2          || 23
+        3          || 27
+        4          || 31
+        155        || 635
     }
 
-    def "Should convert dog years to human years"() {
+    def "Should convert animal years to human years"() {
         when: "The 'convertAnimalYearsToHumanYears' is ran"
-        def result = dog.convertAnimalYearsToHumanYears(dogYears)
+        def result = catsAge.convertAnimalYearsToHumanYears(animalYears)
         then: "result should be as #humanYears"
         result == humanYears
         where:
-        dogYears || humanYears
-        2        || 0.5
-        8        || 0.5
-        15       || 1
-        18       || 1.5
-        24       || 2
-        27       || 2.5
-        29       || 3
-        31       || 3.5
-        49       || 7
-        55       || 8
+        animalYears || humanYears
+        1           || 0.5
+        8           || 0.5
+        15          || 1
+        17          || 1.5
+        23          || 2
+        25          || 2.5
+        27          || 3
+        49          || 8.5
+        55          || 10
     }
 
     def "Should get an illegal argument exception when put animal years number as zero or negative value"() {
@@ -45,7 +44,7 @@ class DogTest extends Specification {
         def humanYears = 0
 
         when:
-        dog.convertAnimalYearsToHumanYears(humanYears)
+        catsAge.convertAnimalYearsToHumanYears(humanYears)
 
         then:
         IllegalArgumentException e = thrown()
@@ -57,7 +56,7 @@ class DogTest extends Specification {
         def humanYears = -2
 
         when:
-        dog.convertHumanYearsToAnimalYears(humanYears)
+        catsAge.convertHumanYearsToAnimalYears(humanYears)
 
         then:
         IllegalArgumentException e = thrown()
