@@ -1,4 +1,4 @@
-package Recruitment.AgesCalculator.helpers;
+package recruitment.agesCalculator.helpers;
 
 public class CalculateExactYearsNumber {
 

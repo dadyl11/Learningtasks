@@ -1,6 +1,6 @@
-package Recruitment.AgesCalculator.TestsWithAbstractClass;
+package recruitment.agesCalculator.TestsWithAbstractClass;
 
-import Recruitment.AgesCalculator.Cat;
+import recruitment.agesCalculator.Cat;
 import junitparams.JUnitParamsRunner;
 import org.junit.runner.RunWith;
 

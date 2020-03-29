@@ -1,4 +1,4 @@
-package Recruitment.AgesCalculator;
+package recruitment.agesCalculator;
 
 public interface CalculateAge {
 

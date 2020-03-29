@@ -1,4 +1,4 @@
-package Recruitment.AgesCalculator;
+package recruitment.agesCalculator;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11,12 +11,12 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitParamsRunner.class)
-public class DogTest {
+public class TurtleTest {
 
   @Rule
   public ExpectedException expectedEx = ExpectedException.none();
 
-  private Dog dog = new Dog();
+  private Turtle turtle = new Turtle();
 
   @Test
   @Parameters(method = "humanToAnimalYears")
@@ -24,7 +24,7 @@ public class DogTest {
     //given
 
     //when
-    int actualAnimalYears = dog.convertHumanYearsToAnimalYears(humanYears);
+    int actualAnimalYears = turtle.convertHumanYearsToAnimalYears(humanYears);
 
     //then
     assertThat(actualAnimalYears, is(animalYears));
@@ -33,10 +33,10 @@ public class DogTest {
   private Object[] humanToAnimalYears() {
     return new Object[]{
         new Object[]{1, 15},
-        new Object[]{2, 24},
-        new Object[]{3, 29},
-        new Object[]{4, 34},
-        new Object[]{155, 789}
+        new Object[]{2, 17},
+        new Object[]{3, 18},
+        new Object[]{4, 19},
+        new Object[]{155, 170}
     };
   }
 
@@ -46,7 +46,7 @@ public class DogTest {
     //given
 
     //when
-    double actualHumanYears = dog.convertAnimalYearsToHumanYears(animalYears);
+    double actualHumanYears = turtle.convertAnimalYearsToHumanYears(animalYears);
 
     //then
     assertThat(actualHumanYears, is(humanYears));
@@ -54,14 +54,13 @@ public class DogTest {
 
   private Object[] animalToHumanYears() {
     return new Object[]{
-        new Object[]{8, 0.5},
+        new Object[]{9, 0.5},
         new Object[]{15, 1},
-        new Object[]{18, 1.5},
-        new Object[]{24, 2},
-        new Object[]{27, 2.5},
-        new Object[]{31, 3.5},
-        new Object[]{49, 7},
-        new Object[]{55, 8}
+        new Object[]{16, 1.5},
+        new Object[]{17, 2},
+        new Object[]{18, 3},
+        new Object[]{20, 5},
+        new Object[]{55, 40}
     };
   }
 
@@ -73,6 +72,6 @@ public class DogTest {
     expectedEx.expectMessage("years number cannot be less or equal to zero");
 
     //when
-    dog.convertHumanYearsToAnimalYears(humanYears);
+    turtle.convertHumanYearsToAnimalYears(humanYears);
   }
 }

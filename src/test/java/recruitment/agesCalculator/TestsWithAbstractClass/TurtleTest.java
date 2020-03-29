@@ -1,6 +1,6 @@
-package Recruitment.AgesCalculator.TestsWithAbstractClass;
+package recruitment.agesCalculator.TestsWithAbstractClass;
 
-import Recruitment.AgesCalculator.Turtle;
+import recruitment.agesCalculator.Turtle;
 import junitparams.JUnitParamsRunner;
 import org.junit.runner.RunWith;
 

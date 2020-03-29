@@ -1,9 +1,9 @@
-package Recruitment.AgesCalculator.TestsWithAbstractClass;
+package recruitment.agesCalculator.TestsWithAbstractClass;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import Recruitment.AgesCalculator.CalculateAge;
+import recruitment.agesCalculator.CalculateAge;
 import junitparams.Parameters;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
